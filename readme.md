@@ -40,7 +40,7 @@ Para garantir que os microserviços estão rodando corretamente, inicie primeiro
 Desenvolvendo a infraestrutura para que todos os microserviços sejam executados dentro de containers Docker. A ideia é que todos os serviços se comuniquem dentro de uma rede Docker privada, deixando exposta apenas a porta do gateway.
 
 Em breve, o suporte ao Docker será concluído, facilitando a execução e escalabilidade dos microserviços.
-
+![Diagrama](https://github.com/thativam/microserviceStudy/blob/main/diagrama.png)
 ## Tecnologias Utilizadas
 
 - **Java 17**
