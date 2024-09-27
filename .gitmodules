@@ -1,0 +1,6 @@
+[submodule "aluraFood"]
+	path = aluraFood
+	url = https://github.com/thativam/aluraFood
+[submodule "aluraPedidos-ms"]
+	path = aluraPedidos-ms
+	url = https://github.com/thativam/aluraPedidos-ms
