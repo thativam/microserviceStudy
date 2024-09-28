@@ -47,6 +47,7 @@ Em breve, o suporte ao Docker será concluído, facilitando a execução e escal
 - **Spring Boot**
 - **Spring Cloud Netflix Eureka** (para service discovery)
 - **Spring Gateway**
+    - **Load Balancing** Em Desenvolvimento 
 - **Maven**
 - **Docker** (suporte em construção)
 
