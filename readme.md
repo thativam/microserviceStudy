@@ -16,13 +16,18 @@ Este repositório contém um sistema de microserviços desenvolvido em Java com 
 
 ## Como Executar
 
-Todos os serviços podem ser executados localmente utilizando o wrapper do Maven. Para iniciar qualquer serviço, basta navegar até a pasta desejada e executar o seguinte comando:
 
-```bash
-./mvnw spring-boot:run
-```
+Para executar todos os serviços execute **docker compose up**
 
-Para garantir que os microserviços estão rodando corretamente, inicie primeiro o **Service Discovery**, seguido pelos demais serviços (Pagamentos, Pedidos e Gateway).
+Ou opcionalmente caso queira executar serviços individuais:
+
+    Todos os serviços podem ser executados localmente utilizando o wrapper do Maven. Para iniciar qualquer serviço, basta navegar até a pasta desejada e executar o seguinte comando:
+
+    ```bash
+    ./mvnw spring-boot:run
+    ```
+
+    Para garantir que os microserviços estão rodando corretamente, inicie primeiro o **Service Discovery**, seguido pelos demais serviços (Pagamentos, Pedidos e Gateway).
 
 ## Estrutura do Repositório
 
@@ -35,9 +40,9 @@ Para garantir que os microserviços estão rodando corretamente, inicie primeiro
 └── README.md                   # Este arquivo
 ```
 
-## Suporte a Docker (Em Construção)
+## Suporte a Docker
 
-Desenvolvendo a infraestrutura para que todos os microserviços sejam executados dentro de containers Docker. A ideia é que todos os serviços se comuniquem dentro de uma rede Docker privada, deixando exposta apenas a porta do gateway.
+Desenvolvido a infraestrutura para que todos os microserviços sejam executados dentro de containers Docker. A ideia é que todos os serviços se comuniquem dentro de uma rede Docker privada, deixando exposta apenas a porta do gateway.
 
 Em breve, o suporte ao Docker será concluído, facilitando a execução e escalabilidade dos microserviços.
 ![Diagrama](https://github.com/thativam/microserviceStudy/blob/main/diagrama.png)
