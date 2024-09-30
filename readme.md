@@ -51,8 +51,9 @@ Em breve, o suporte ao Docker será concluído, facilitando a execução e escal
 - **Java 17**
 - **Spring Boot**
 - **Spring Cloud Netflix Eureka** (para service discovery)
+- **Load Balancing**
+    - Basta rodar docker compose -d --scale serviceName=int  (exemplo --scale pagamentos=3)
 - **Spring Gateway**
-    - **Load Balancing** Em Desenvolvimento 
 - **Maven**
 - **Docker** (suporte em construção)
 
