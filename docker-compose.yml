@@ -85,6 +85,15 @@ services:
     environment:
       - server.port=8082
       - eureka.client.serviceUrl.defaultZone=http://serviceDiscovery:8081/eureka
+  rabbitmq:
+    image: rabbitmq:4-management
+    restart: always
+    ports:
+      - 5672:5672
+      - 15672:15672
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin
 
 volumes:
   db-data:
