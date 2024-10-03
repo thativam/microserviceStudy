@@ -9,6 +9,7 @@ services:
     working_dir: /app
     command: mvn spring-boot:run
     environment:
+      - spring.rabbitmq.host=rabbitmq
       - spring.datasource.url=jdbc:mysql://db-pagamentos:3306/aluraPag?serverTimezone=UTC&createDatabaseIfNotExist=true
       - spring.datasource.username=root
       - spring.datasource.password=root
@@ -38,6 +39,7 @@ services:
     working_dir: /app
     command: mvn spring-boot:run
     environment:
+      - spring.rabbitmq.host=rabbitmq
       - spring.datasource.url=jdbc:mysql://db-pagamentos:3306/alurafood-pedidos?serverTimezone=UTC&createDatabaseIfNotExist=true
       - spring.datasource.username=root
       - spring.datasource.password=root
@@ -71,6 +73,20 @@ services:
       - server.port=8081
       - eureka.client.serviceUrl.defaultZone=http://serviceDiscovery:8081/eureka
   
+  avaliacao:
+    image: maven:3.8.4-openjdk-17
+    volumes:
+      - ./avaliacao/:/app
+      - /app/target
+    networks:
+      - internalNetwork
+    working_dir: /app
+    command: mvn spring-boot:run
+    environment:
+      - spring.rabbitmq.host=rabbitmq
+      - eureka.client.serviceUrl.defaultZone=http://serviceDiscovery:8081/eureka
+      - server.port=0
+
   gateway:
     image: maven:3.8.4-openjdk-17
     volumes:
@@ -87,11 +103,13 @@ services:
       - eureka.client.serviceUrl.defaultZone=http://serviceDiscovery:8081/eureka
   rabbitmq:
     image: rabbitmq:4-management
+    networks:
+      - internalNetwork
     restart: always
     ports:
-      - 5672:5672
       - 15672:15672
     environment:
+      - RABBITMQ_ERLANG_COOKIE=secretcookie
       - RABBITMQ_DEFAULT_USER=admin
       - RABBITMQ_DEFAULT_PASS=admin
 

@@ -34,18 +34,26 @@ Ou opcionalmente caso queira executar serviços individuais:
 ```
 .
 ├── gateway/                   # Pasta do gateway
-├── service-discovery/          # Pasta do service discovery
-├── pagamentos/                 # Submódulo para o serviço de pagamentos
-├── pedidos/                    # Submódulo para o serviço de pedidos
-└── README.md                   # Este arquivo
+├── service-discovery/         # Pasta do service discovery
+├── pagamentos/                # Submódulo para o serviço de pagamentos
+├── pedidos/                   # Submódulo para o serviço de pedidos
+├── avaliacao/                 # Submódulo para o serviço de avaliação
+└── README.md                  # Este arquivo
 ```
 
 ## Suporte a Docker
 
 Desenvolvido a infraestrutura para que todos os microserviços sejam executados dentro de containers Docker. A ideia é que todos os serviços se comuniquem dentro de uma rede Docker privada, deixando exposta apenas a porta do gateway.
 
-Em breve, o suporte ao Docker será concluído, facilitando a execução e escalabilidade dos microserviços.
+
 ![Diagrama](https://github.com/thativam/microserviceStudy/blob/main/diagrama.png)
+
+## Problemas/TODOS
+ - Caso uma mensagem do rabbit nao seja processada corretamente, ela será perdida.
+ - Pontos criticos de falha, rabbit, serviceDiscovery e gateway, se um desses falhar toda arquitetura quebra.
+ - Sem replicação dos bancos de dados
+ - Credenciais no github
+ - Falta um sistema de logger.
 ## Tecnologias Utilizadas
 
 - **Java 17**
